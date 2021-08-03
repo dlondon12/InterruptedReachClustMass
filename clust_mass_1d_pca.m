@@ -26,7 +26,7 @@ function [hmat,pout,clusts,Fclust,Fclustrandmax]=clust_mass_1d_pca(RR,RRrand,p,p
 % h: Ntimes x 3 logical matrix
 %   True for time points in significant clusters, false otherwise
 %
-% pout: Ntimes x 3 matrix
+% pout: Ntimes x 1 vector
 %   p-value for each point in clusters that are tested. These are the
 %   p-values of each cluster, not separate p-values for each time point.
 %   Time points not in a cluster are set to NaN.
