@@ -18,7 +18,7 @@ function [h,pout,clusts,Fstat,RRrandout,Fclustrandmax,hposthoc,poutposthoc,clust
 % p: scalar
 %   p-value that defines the threshold to define clusters
 %
-% pcust: scalar
+% pclust: scalar
 %   p-value that defines significance for each cluster
 %
 % Niter: scalar
@@ -34,10 +34,16 @@ function [h,pout,clusts,Fstat,RRrandout,Fclustrandmax,hposthoc,poutposthoc,clust
 % h: Ntimes x 1 logical vector
 %   True for time points in significant clusters, false otherwise
 %
-% pout: Ntimes x 1 vector
+% pout: Ntimes x 3 vector
 %   p-value for each point in clusters that are tested. These are the
 %   p-values of each cluster, not separate p-values for each time point.
-%   Time points not in a cluster are set to NaN.
+%   Time points not in a cluster are set to NaN. The first row contains the
+%   p-values for the effect corresponding to NgroupsA and the second row
+%   for the effect corresponding to NgroupsB. The third row provides
+%   interaction effect p-values, but these are overly conservative. In
+%   general permutation across both factors should not be done if there is
+%   an interaction and this requires an approximate test. This will be
+%   addressed in a companion paper with an updated function.
 %
 % clusts: Nclusts x 1 struct
 %   Structure containing p-values and time-points of each cluster

@@ -21,7 +21,7 @@ function [hmat,pout,clusts]=clust_mass_1d_2f_multi(RR,p,pclust,Niter)
 % p: scalar
 %   p-value that defines the threshold to define clusters
 %
-% pcust: scalar
+% pclust: scalar
 %   p-value that defines significance for each cluster
 %
 % Niter: scalar
@@ -29,7 +29,7 @@ function [hmat,pout,clusts]=clust_mass_1d_2f_multi(RR,p,pclust,Niter)
 %
 %
 % Outputs:
-% h: Ntimes x 1 logical vector
+% h: Ntimes x 3 logical matrix
 %   True for time points in significant clusters, false otherwise
 %
 % pout: Ntimes x 3 vector
